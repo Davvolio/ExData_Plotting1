@@ -17,8 +17,6 @@ workset$Time<-NULL
 #resetting local to get names of weekdays in english
 Sys.setlocale("LC_TIME", "English")
 
-#setting the screen device parameters to 2x2 matrix
-
 
 #Because of the legend issue, this time straight plot to file, instead of screen copy
 png(file = "plot4.png", width = 480, height = 480, units = "px")
