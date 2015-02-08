@@ -1,4 +1,7 @@
-
+#downloading and unzipping dataset
+fileUrl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+download.file(fileUrl, destfile="household_power_consumption.zip", mode = "wb")
+unzip("household_power_consumption.zip",exdir=".")
 
 #Here we read two sets: Set of col names and chunk of data that contains two needed days
 names1 <-read.table("household_power_consumption.txt",sep=";", na.strings ="?", nrows=1,stringsAsFactors=F)

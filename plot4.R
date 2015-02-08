@@ -1,4 +1,9 @@
 
+#downloading and unzipping dataset
+fileUrl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+download.file(fileUrl, destfile="household_power_consumption.zip", mode = "wb")
+unzip("household_power_consumption.zip",exdir=".")
+
 #Here we read two sets: Set of col names and chunk of data that contains two needed days
 names1 <-read.table("household_power_consumption.txt",sep=";", na.strings ="?", nrows=1,stringsAsFactors=F)
 megadata<-read.table("household_power_consumption.txt",sep=";", na.strings ="?", nrows=10000,skip=63200,stringsAsFactors=F)
@@ -44,7 +49,7 @@ plot(workset$Date, workset$Voltage,type="l",main="", xlab="datetime",ylab="Volta
 #And finally the last plot!
 plot(workset$Date, workset$Global_reactive_power,type="l",main="", xlab="datetime",ylab="Global_reactive_power")
 
-#Copy my plot to a PNG file with exact dimensions and disconnecting the device
+#Disconnecting the device
 dev.off()
 
 

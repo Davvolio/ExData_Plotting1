@@ -1,5 +1,8 @@
-##Start of common part. Reading, tidying and subsetting.
 
+#downloading and unzipping dataset
+fileUrl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+download.file(fileUrl, destfile="household_power_consumption.zip", mode = "wb")
+unzip("household_power_consumption.zip",exdir=".")
 
 #Here we read two sets: Set of col names and chunk of data that contains two needed days
 names1 <-read.table("household_power_consumption.txt",sep=";", na.strings ="?", nrows=1,stringsAsFactors=F)
@@ -13,8 +16,6 @@ workset <-subset(megadata,megadata$V1>"2007-01-31" & megadata$V1<"2007-02-03")
 
 #Naming the columns correct, because names was skipped with 63199 other observations earlier
 names(workset)<-names1
-
-##End of common part. Unique plotting below.
 
 #Building the plot on screen to check that all ok
 hist(workset$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
