@@ -41,7 +41,7 @@ lines(workset$Date, workset$Sub_metering_2, col="red")
 lines(workset$Date, workset$Sub_metering_3, col="blue")
 
 #Adding legend to the top right corner to second plot
-legend("topright", legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), lwd=1,col=c("black","red","blue"),cex=0.85,bty="o",box.lty=1)
+legend("topright", legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), lwd=1,col=c("black","red","blue"),cex=0.95,bty="n",box.lty=1)
 
 #Building the third plot 
 plot(workset$Date, workset$Voltage,type="l",main="", xlab="datetime",ylab="Voltage")
